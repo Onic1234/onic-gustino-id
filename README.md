@@ -1,70 +1,70 @@
-  <h1>satriabahari.my.id</h1>
-  <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR and more.</p>
+# onic-gustino-id
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/satriabahari/satria.com)](https://github.com/satriabahari/satria.com/stargazers)
-[![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/status.svg)](https://depfu.com)
-[![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/overview.svg)](https://depfu.com/github/satriabahari/satria.com?project_id=38809)
-[![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/count.svg)](https://depfu.com/github/satriabahari/satria.com?project_id=38809)
-[![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
+🔥 Personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and modern web technologies.
+
+[![GitHub Repo stars](https://img.shields.io/github/stars/Onic1234/onic-gustino-id)](https://github.com/Onic1234/onic-gustino-id/stargazers)
 
 <br/>
 
-<img width="1525" height="1221" alt="Screenshot 2025-08-07 115929" src="https://github.com/user-attachments/assets/fcf5a30b-0ad8-4a57-b1bf-e846e4ed416c" />
-
 ## 📘 Introduction
 
-This is my personal website built from scratch since February 2024 using modern technologies such as Next.js and TypeScript.
+Welcome to my personal portfolio and project showcase. This website is a comprehensive platform where I display my achievements, projects, coding statistics, and insights.
 
-I use this platform to share projects, insights, and resources. The site is constantly evolving as I add more features and improvements.
+The site features real-time integrations with various platforms like GitHub, CodeWars, LeetCode, Monkeytype, and more. It's built with modern technologies and continuously evolving.
 
-Feel free to explore the source code, use it as inspiration, or fork it as a template under the provided license. If you find this project useful, consider giving it a star ⭐.
+Feel free to explore the source code, use it as inspiration, or fork it as a template. If you find this project useful, consider giving it a star ⭐.
 
-Have feedback, ideas, or questions? Don’t hesitate to reach out! 🙌
+Have feedback or questions? Feel free to reach out through the contact page! 🙌
 
 ---
 
 ## Tech Stack
 
-This website is built using these technologies:
+This website is built using:
 
-- **⚛️ Next.js**
-- **🔰 TypeScript**
-- **💠 Tailwind CSS v3**
-- **🦫 Zustand**
-- **〰️ SWR**
-- **➰ Framer Motion**
-- **💢 React Icons**
-- **🌐 Next-Intl (i18n)**
-- **📦 Absolute Imports & Path Alias**
-- **📏 ESLint & Prettier**
-- **📌 Conventional Commit Lint**
+- **⚛️ Next.js 14+** - React framework
+- **🔰 TypeScript** - Type safety
+- **💠 Tailwind CSS** - Styling
+- **🦫 Zustand** - State management
+- **〰️ SWR** - Data fetching
+- **➰ Framer Motion** - Animations
+- **💢 React Icons** - Icon library
+- **🌐 Next-Intl** - Multi-language support (EN & ID)
+- **🔐 NextAuth** - Authentication
+- **🔥 Firebase** - Backend services
+- **📦 Absolute Imports** - Clean imports
+- **📏 ESLint & Prettier** - Code quality
 
 ---
 
 ## 🚀 Features
 
-### 🕗 Wakatime Statistics
+### 📊 Dashboard
+Comprehensive dashboard showcasing live statistics from multiple platforms:
+- **Wakatime** - Coding time and activity statistics
+- **GitHub** - Contributions and repositories
+- **CodeWars** - Coding challenges stats
+- **LeetCode** - Problem solving progress
+- **Monkeytype** - Typing speed records
+- **Umami** - Website analytics
 
-Displays live coding statistics from Wakatime using serverless API routes in Next.js.
+### 🏆 Achievements
+Track and display achievements from various coding platforms with filtering and categorization.
 
-### 🗳 Project Showcase
+### 💼 Projects Showcase
+Display of featured projects with detailed information, links, and images.
 
-Uses ISR (1s revalidation) and SSR for optimal performance.
+### 👤 About Section
+Personal information, career history, education background, and professional experience.
+
+### 💬 Smart Talk
+Interactive chat feature powered by AI for engaging conversations.
+
+### 📧 Contact
+Contact form for direct communication with integrated email functionality.
 
 ### 🌍 Internationalization
-
-Supports multiple languages using `next-intl`. Easily extendable to support additional locales.
-
-### 📊 Developer Dashboard
-
-Interactive dashboard visualizing:
-
-- GitHub contributions
-- Wakatime data
-- Codewars stats
-- Monkeytype typing stats
-
-Each stat is retrieved using public APIs and visualized in a user-friendly way.
+Full support for multiple languages (English & Indonesian) using `next-intl`.
 
 ---
 
@@ -74,28 +74,10 @@ Follow these steps to run the project locally:
 
 ### 1. Clone the Repository
 
-Using Git:
-
 ```bash
-git clone https://github.com/satriabahari/satriabahari.my.id
+git clone https://github.com/Onic1234/onic-gustino-id.git
+cd onic-gustino-id
 ```
-
-Using `create-next-app`:
-
-```bash
-npx create-next-app -e https://github.com/satriabahari/satriabahari.my.id project-name
-```
-
-Using `degit`:
-
-```bash
-npx degit satriabahari/satriabahari.my.id YOUR_APP_NAME
-```
-
-Or deploy directly to Vercel / Netlify:
-
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/satriabahari/satriabahari.my.id)  
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/satriabahari/satriabahari.my.id)
 
 ---
 
@@ -105,94 +87,67 @@ Or deploy directly to Vercel / Netlify:
 bun install
 ```
 
-> ⚠️ It's recommended to use **Bun** to ensure husky hooks and scripts work properly.
+> 💡 It's recommended to use **Bun** for package management.
 
 ---
 
 ### 3. Configure Environment Variables
 
-Copy `.env.example` to `.env` and replace with your own credentials.
+Create a `.env.local` file in the root directory and add your environment variables:
 
 ```bash
-cp .env.example .env
+# Copy from .env.example if available
+cp .env.example .env.local
 ```
 
-You’ll need credentials for services like:
+You'll need credentials for:
 
-- Nodemailer
-- GitHub
-- Wakatime
-- Codewars
-- Monkeytype
+- **GitHub** - For contributions and profile data
+- **CodeWars** - For coding challenge stats
+- **LeetCode** - For problem solving stats
+- **Monkeytype** - For typing speed records
+- **Wakatime** - For coding time statistics
+- **Umami** - For website analytics
+- **Firebase** - For backend and authentication
+- **NextAuth** - For authentication
+- **Email Service** - For contact form (Nodemailer/SendGrid)
+- **AI Services** - For Smart Talk feature (Gemini API)
 
-#### Example:
+Example environment variables structure:
 
-```
-# Nodemailer
-NODEMAILER_PW=your_email_password
-NODEMAILER_EMAIL=your_email@example.com
-
-# GitHub Token
+```env
+# GitHub
 GITHUB_READ_USER_TOKEN_PERSONAL=your_github_token
 
-# Umami Analytics
-UMAMI_API_KEY=your_umami_api_key
-UMAMI_WEBSITE_ID_SITE=your_site_id
-UMAMI_WEBSITE_ID_MYID=your_myid_id
-
-# Wakatime
-WAKATIME_API_ID=your_wakatime_id
-WAKATIME_API_KEY=your_wakatime_key
-
-# Monkeytype
-MONKEYTYPE_API_KEY=your_monkeytype_api_key
-
-# Codewars
+# CodeWars
 CODEWARS_USER_ID=your_codewars_username
 
-# PostgreSQL (Supabase)
-POSTGRES_URL=your_postgres_url
-POSTGRES_PRISMA_URL=your_prisma_url
-POSTGRES_URL_NO_SSL=your_postgres_url_no_ssl
-POSTGRES_URL_NON_POOLING=your_postgres_url_non_pooling
-POSTGRES_USER=your_postgres_user
-POSTGRES_HOST=your_postgres_host
-POSTGRES_PASSWORD=your_postgres_password
-POSTGRES_DATABASE=your_postgres_db
+# LeetCode & Other Platforms
+WAKATIME_API_KEY=your_wakatime_key
+MONKEYTYPE_API_KEY=your_monkeytype_key
+UMAMI_API_KEY=your_umami_api_key
 
-# Google Auth
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-
-# Gemini API
-GEMINI_API_KEY=your_gemini_api_key
-
-# GitHub Auth
-GITHUB_ID=your_github_app_id
-GITHUB_SECRET=your_github_app_secret
+# Firebase
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 
 # NextAuth
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your_nextauth_secret
 
-# Firebase
-NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
-NEXT_PUBLIC_FIREBASE_DB_URL=your_firebase_db_url
-NEXT_PUBLIC_FIREBASE_CHAT_DB=messages
+# Email Service
+NODEMAILER_EMAIL=your_email@example.com
+NODEMAILER_PW=your_email_password
 
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+# AI Services
+GEMINI_API_KEY=your_gemini_api_key
 
 # Misc
 NEXT_PUBLIC_AUTHOR_EMAIL=your_email@example.com
-DOMAIN=https://www.yourdomain.com
-
 ```
 
 ---
@@ -205,11 +160,62 @@ bun run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the homepage in:  
-`src/pages/index.tsx`
+---
+
+### 5. Build for Production
+
+```bash
+bun run build
+bun run start
+```
+
+---
+
+## 📁 Project Structure
+
+```
+├── app/                    # Next.js App Router pages
+│   ├── api/               # API routes for external services
+│   ├── about/             # About page
+│   ├── achievements/      # Achievements page
+│   ├── dashboard/         # Statistics dashboard
+│   ├── projects/          # Projects showcase
+│   └── ...
+├── common/                # Shared utilities and components
+│   ├── components/        # Reusable UI components
+│   ├── types/            # TypeScript type definitions
+│   ├── constants/        # App constants
+│   ├── stores/           # Zustand state stores
+│   └── utils/            # Helper utilities
+├── modules/              # Feature modules
+├── services/             # External API services
+├── hooks/                # Custom React hooks
+├── contents/             # MDX content files
+├── messages/             # i18n translation files
+└── public/               # Static assets
+```
+
+---
+
+## 🌐 Live Demo
+
+Visit the live website: [onic-gustino-id](https://onic-gustino-id.vercel.app)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - feel free to use it as a template!
+
+---
+
+## 🙋 Support
+
+If you have any questions or need help, feel free to:
+- Open an issue on GitHub
+- Check existing documentation
+- Contact me through the website
+
+---
+
+**Made with ❤️ by Onic Gustino**
