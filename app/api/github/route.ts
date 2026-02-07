@@ -1,6 +1,28 @@
 import { GITHUB_ACCOUNTS } from "@/common/constants/github";
 import { NextResponse } from "next/server";
 
+const GITHUB_GRAPHQL_URL = "https://api.github.com/graphql";
+
+const CONTRIBUTIONS_QUERY = `
+  query($userName:String!) {
+    user(login: $userName) {
+      contributionsCollection {
+        contributionCalendar {
+          totalContributions
+          colors
+          weeks {
+            contributionDays {
+              contributionCount
+              date
+              color
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export async function GET() {
   try {
     const username = GITHUB_ACCOUNTS.username;
@@ -13,11 +35,16 @@ export async function GET() {
       );
     }
 
-    const response = await fetch(`https://api.github.com/users/${username}`, {
+    const response = await fetch(GITHUB_GRAPHQL_URL, {
+      method: "POST",
       headers: {
-        Authorization: `token ${token}`,
-        Accept: "application/vnd.github.v3+json",
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify({
+        query: CONTRIBUTIONS_QUERY,
+        variables: { userName: username },
+      }),
       cache: "no-store",
     });
 
@@ -30,15 +57,16 @@ export async function GET() {
 
     const data = await response.json();
 
+    if (data.errors) {
+      console.error("GitHub GraphQL Error:", data.errors);
+      return NextResponse.json(
+        { error: "Failed to fetch GitHub contributions" },
+        { status: 500 },
+      );
+    }
+
     return NextResponse.json({
-      username: data.login,
-      name: data.name,
-      bio: data.bio,
-      followers: data.followers,
-      following: data.following,
-      public_repos: data.public_repos,
-      avatar_url: data.avatar_url,
-      html_url: data.html_url,
+      contributionsCollection: data.data?.user?.contributionsCollection,
     });
   } catch (error) {
     console.error("GitHub API Error:", error);

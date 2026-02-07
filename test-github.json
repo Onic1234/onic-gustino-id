@@ -1,0 +1,4 @@
+{
+  "query": "query($userName:String!) { user(login: $userName) { contributionsCollection { contributionCalendar { totalContributions colors weeks { contributionDays { contributionCount date color } } } } } }",
+  "variables": { "userName": "Onic1234" }
+}
