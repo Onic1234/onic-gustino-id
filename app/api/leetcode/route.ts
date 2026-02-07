@@ -1,4 +1,5 @@
 import { LEETCODE_ACCOUNT } from "@/common/constants/leetcode";
+import { NextResponse } from "next/server";
 
 const LEETCODE_GRAPHQL_URL = "https://leetcode.com/graphql";
 
@@ -25,7 +26,7 @@ export async function GET() {
     const username = LEETCODE_ACCOUNT.username;
 
     if (!username) {
-      return Response.json(
+      return NextResponse.json(
         { error: "LeetCode username not configured" },
         { status: 500 },
       );
@@ -42,10 +43,11 @@ export async function GET() {
         query: LEETCODE_QUERY,
         variables: { username },
       }),
+      cache: "no-store",
     });
 
     if (!response.ok) {
-      return Response.json(
+      return NextResponse.json(
         { error: "Failed to fetch LeetCode data" },
         { status: 500 },
       );
@@ -54,13 +56,13 @@ export async function GET() {
     const data = await response.json();
 
     if (data.errors) {
-      return Response.json({ error: "User not found" }, { status: 404 });
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     const user = data.data?.matchedUser;
 
     if (!user) {
-      return Response.json({ error: "User not found" }, { status: 404 });
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     const solvedStats = user.submitStats?.acSubmissionNum || [];
@@ -74,7 +76,7 @@ export async function GET() {
     const mediumTotal = totalStats.find((s: any) => s.difficulty === "Medium");
     const hardTotal = totalStats.find((s: any) => s.difficulty === "Hard");
 
-    return Response.json({
+    return NextResponse.json({
       username: user.username,
       easy: {
         solved: easy?.count || 0,
@@ -91,6 +93,9 @@ export async function GET() {
     });
   } catch (error) {
     console.error("LeetCode API Error:", error);
-    return Response.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
   }
 }
