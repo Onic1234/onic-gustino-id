@@ -1,6 +1,5 @@
 import NextTopLoader from "nextjs-toploader";
 import Script from "next/script";
-import { getServerSession } from "next-auth";
 import { Analytics } from "@vercel/analytics/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -9,7 +8,6 @@ import "./globals.css";
 
 import Layouts from "@/common/components/layouts";
 import ThemeProviderContext from "@/common/stores/theme";
-import NextAuthProvider from "@/SessionProvider";
 import { METADATA } from "@/common/constants/metadata";
 import { inter } from "@/common/styles/fonts";
 import SkeletonThemeProvider from "@/SkeletonThemeProvider";
@@ -44,7 +42,6 @@ const RootLayout = async ({
   params: { locale: string };
 }>) => {
   const messages = await getMessages();
-  const session = await getServerSession();
 
   return (
     <html lang={locale} suppressHydrationWarning={true}>
@@ -69,13 +66,11 @@ const RootLayout = async ({
           shadow="0 0 10px #fbe400,0 0 5px #ffffb8"
         />
         <NextIntlClientProvider messages={messages}>
-          <NextAuthProvider session={session}>
-            <ThemeProviderContext>
-              <SkeletonThemeProvider>
-                <Layouts>{children}</Layouts>
-              </SkeletonThemeProvider>
-            </ThemeProviderContext>
-          </NextAuthProvider>
+          <ThemeProviderContext>
+            <SkeletonThemeProvider>
+              <Layouts>{children}</Layouts>
+            </SkeletonThemeProvider>
+          </ThemeProviderContext>
         </NextIntlClientProvider>
         <Analytics />
       </body>

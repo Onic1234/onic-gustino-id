@@ -12,11 +12,14 @@ export async function GET() {
       );
     }
 
+    // WakaTime uses Basic Authentication with API key as username and empty password
+    const authHeader = Buffer.from(`${apiKey}:`).toString("base64");
+
     const response = await fetch(
       "https://wakatime.com/api/v1/users/current/stats/last_7_days",
       {
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Basic ${authHeader}`,
         },
         cache: "no-store",
       },

@@ -119,12 +119,7 @@ export const STACKS: SkillProps = {
     color: "text-neutral-800",
     isActive: true,
   },
-  "NextAuth.js": {
-    icon: <RiShieldKeyholeFill size={iconSize} />,
-    background: "bg-slate-800",
-    color: "text-slate-800",
-    isActive: true,
-  },
+
   TanStack: {
     icon: <TbBeach size={iconSize} />,
     background: "bg-amber-500",
