@@ -30,9 +30,7 @@ This website is built using:
 - **➰ Framer Motion** - Animations
 - **💢 React Icons** - Icon library
 - **🌐 Next-Intl** - Multi-language support (EN & ID)
-- **🔐 NextAuth** - Authentication
-- **🔥 Firebase** - Backend services
-- **📦 Absolute Imports** - Clean imports
+- ** Absolute Imports** - Clean imports
 - **📏 ESLint & Prettier** - Code quality
 
 ---
@@ -40,7 +38,9 @@ This website is built using:
 ## 🚀 Features
 
 ### 📊 Dashboard
+
 Comprehensive dashboard showcasing live statistics from multiple platforms:
+
 - **Wakatime** - Coding time and activity statistics
 - **GitHub** - Contributions and repositories
 - **CodeWars** - Coding challenges stats
@@ -49,21 +49,27 @@ Comprehensive dashboard showcasing live statistics from multiple platforms:
 - **Umami** - Website analytics
 
 ### 🏆 Achievements
+
 Track and display achievements from various coding platforms with filtering and categorization.
 
 ### 💼 Projects Showcase
+
 Display of featured projects with detailed information, links, and images.
 
 ### 👤 About Section
+
 Personal information, career history, education background, and professional experience.
 
 ### 💬 Smart Talk
+
 Interactive chat feature powered by AI for engaging conversations.
 
 ### 📧 Contact
+
 Contact form for direct communication with integrated email functionality.
 
 ### 🌍 Internationalization
+
 Full support for multiple languages (English & Indonesian) using `next-intl`.
 
 ---
@@ -108,10 +114,6 @@ You'll need credentials for:
 - **Monkeytype** - For typing speed records
 - **Wakatime** - For coding time statistics
 - **Umami** - For website analytics
-- **Firebase** - For backend and authentication
-- **NextAuth** - For authentication
-- **Email Service** - For contact form (Nodemailer/SendGrid)
-- **AI Services** - For Smart Talk feature (Gemini API)
 
 Example environment variables structure:
 
@@ -126,25 +128,6 @@ CODEWARS_USER_ID=your_codewars_username
 WAKATIME_API_KEY=your_wakatime_key
 MONKEYTYPE_API_KEY=your_monkeytype_key
 UMAMI_API_KEY=your_umami_api_key
-
-# Firebase
-NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-
-# NextAuth
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your_nextauth_secret
-
-# Email Service
-NODEMAILER_EMAIL=your_email@example.com
-NODEMAILER_PW=your_email_password
-
-# AI Services
-GEMINI_API_KEY=your_gemini_api_key
 
 # Misc
 NEXT_PUBLIC_AUTHOR_EMAIL=your_email@example.com
@@ -162,20 +145,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-### 5. Build for Production
-
-```bash
-bun run build
-bun run start
-```
-
 ---
 
 ## 📁 Project Structure
 
 ```
 ├── app/                    # Next.js App Router pages
-│   ├── api/               # API routes for external services
 │   ├── about/             # About page
 │   ├── achievements/      # Achievements page
 │   ├── dashboard/         # Statistics dashboard
@@ -188,7 +163,6 @@ bun run start
 │   ├── stores/           # Zustand state stores
 │   └── utils/            # Helper utilities
 ├── modules/              # Feature modules
-├── services/             # External API services
 ├── hooks/                # Custom React hooks
 ├── contents/             # MDX content files
 ├── messages/             # i18n translation files
@@ -212,6 +186,7 @@ This project is licensed under the MIT License - feel free to use it as a templa
 ## 🙋 Support
 
 If you have any questions or need help, feel free to:
+
 - Open an issue on GitHub
 - Check existing documentation
 - Contact me through the website
