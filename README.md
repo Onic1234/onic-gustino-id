@@ -41,16 +41,10 @@ This website is built using:
 
 Comprehensive dashboard showcasing live statistics from multiple platforms:
 
-- **Wakatime** - Coding time and activity statistics
 - **GitHub** - Contributions and repositories
+- **Wakatime** - Coding time and activity statistics
 - **CodeWars** - Coding challenges stats
 - **LeetCode** - Problem solving progress
-- **Monkeytype** - Typing speed records
-- **Umami** - Website analytics
-
-### 🏆 Achievements
-
-Track and display achievements from various coding platforms with filtering and categorization.
 
 ### 💼 Projects Showcase
 
@@ -60,13 +54,9 @@ Display of featured projects with detailed information, links, and images.
 
 Personal information, career history, education background, and professional experience.
 
-### 💬 Smart Talk
-
-Interactive chat feature powered by AI for engaging conversations.
-
 ### 📧 Contact
 
-Contact form for direct communication with integrated email functionality.
+Contact form for direct communication.
 
 ### 🌍 Internationalization
 

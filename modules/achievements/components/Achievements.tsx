@@ -35,7 +35,7 @@ const Achievements = () => {
   const apiUrl = `/api/achievements${queryParams.toString() ? `?${queryParams.toString()}` : ""}`;
 
   const { data, isLoading, error } = useSWR(apiUrl, fetcher);
-  
+
   const filteredAchievements: AchievementItem[] = data
     ?.filter((item: AchievementItem) => {
       const matchesShow = item?.is_show;
@@ -52,7 +52,8 @@ const Achievements = () => {
     <section className="space-y-4">
       <EmptyState message={t("no_data")} />
       <p className="text-center text-sm text-neutral-600 dark:text-neutral-400">
-        Achievements feature has been disabled. This feature requires server-side API integration.
+        Achievements feature has been disabled. This feature requires
+        server-side API integration.
       </p>
     </section>
   );

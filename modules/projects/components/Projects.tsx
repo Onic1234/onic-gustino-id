@@ -1,39 +1,20 @@
 "use client";
 
+import useSWR from "swr";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
 
+import ProjectSkeleton from "./ProjectSkeleton";
 import ProjectCard from "./ProjectCard";
 
 import EmptyState from "@/common/components/elements/EmptyState";
+import { fetcher } from "@/services/fetcher";
 import { ProjectItem } from "@/common/types/projects";
-import ProjectSkeleton from "./ProjectSkeleton";
 
 const Projects = () => {
-  const [data, setData] = useState<ProjectItem[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const { data, isLoading, error } = useSWR("/api/projects", fetcher);
 
   const t = useTranslations("ProjectsPage");
-
-  useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        // Fetch projects from MDX files in contents/projects
-        const response = await fetch("/api/projects");
-        if (!response.ok) throw new Error("Failed to fetch");
-        const projects = await response.json();
-        setData(projects);
-      } catch (err) {
-        setError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadProjects();
-  }, []);
 
   const filteredProjects: ProjectItem[] = data
     ?.filter((item: ProjectItem) => item?.is_show)
