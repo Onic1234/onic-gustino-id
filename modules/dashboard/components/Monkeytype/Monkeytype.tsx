@@ -17,11 +17,11 @@ import Profile from "./Profile";
 import Leaderboard from "./Leaderboard";
 
 const Monkeytype = () => {
-  const { is_active } = MONKEYTYPE_ACCOUNT;\n\n  const t = useTranslations(\"DashboardPage\");\n\n  if (!is_active) return null;\n\n  return (\n    <section className=\"space-y-2\">\n      <SectionHeading\n        title={t(\"monkeytype.title\")}\n        icon={<MonkeytypeIcon className=\"h-5 w-5\" />\n      />\n      <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n        Monkeytype feature has been disabled as it requires server-side API integration.\n      </p>\n    </section>\n  );
-
   const { monkeytype_url, is_active } = MONKEYTYPE_ACCOUNT;
 
   const t = useTranslations("DashboardPage");
+
+  const { data, isLoading, error } = useSWR("/api/monkeytype", fetcher);
 
   if (!is_active) return null;
 

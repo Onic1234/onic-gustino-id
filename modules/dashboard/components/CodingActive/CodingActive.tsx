@@ -19,8 +19,6 @@ import { fetcher } from "@/services/fetcher";
 import { WAKATIME_ACCOUNT } from "@/common/constants/wakatime";
 
 const CodingActive = () => {
-  const t = useTranslations(\"DashboardPage\");\n\n  return (\n    <section className=\"space-y-2\">\n      <SectionHeading\n        title={t(\"coding_active.title\")}\n        icon={<WakatimeIcon className=\"h-5 w-5\" />\n      />\n      <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n        Coding activity feature has been disabled as it requires server-side API integration.\n      </p>\n    </section>\n  );
-
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(
     null,
   );
@@ -28,6 +26,8 @@ const CodingActive = () => {
   const { is_active } = WAKATIME_ACCOUNT;
 
   const t = useTranslations("DashboardPage");
+
+  const { data, isLoading, error } = useSWR("/api/read-stats", fetcher);
 
   useEffect(() => {
     const formatLastUpdate = (): void => {
