@@ -56,19 +56,6 @@ const Achievements = () => {
       </p>
     </section>
   );
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-            >
-              <AchievementCard {...item} />
-            </motion.div>
-          ))}
-        </div>
-      )}
-    </section>
-  );
 };
 
 export default Achievements;
