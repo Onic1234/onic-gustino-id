@@ -20,7 +20,7 @@ const Umami = () => {
   const searchParams = useSearchParams();
   const domain = searchParams.get("domain") || "all";
 
-  const key = `/api/umami?domain=${domain}`;
+  return (\n    <section className=\"space-y-2\">\n      <SectionHeading\n        title={t(\"umami.title\")}\n        icon={<UmamiIcon className=\"h-5 w-5\" />}\n      />\n      <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n        Umami analytics feature has been disabled as it requires server-side API integration.\n      </p>\n    </section>\n  );
 
   const { data, isLoading, error } = useSWR(key, fetcher);
   const { is_active } = UMAMI_ACCOUNT;

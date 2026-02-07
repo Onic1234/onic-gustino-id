@@ -41,8 +41,10 @@ const ContactForm = () => {
   const handleFormSubmit = async (payload: FormEmail) => {
     setIsLoading(true);
     try {
-      const response = await axios.post("/api/email", payload);
-      if (response.status === 200) setIsSuccess(true);
+      // Email functionality has been removed
+      // You can add your own email service integration here
+      console.log("Form data:", payload);
+      setIsSuccess(true);
       reset();
       setIsLoading(false);
     } catch (error) {

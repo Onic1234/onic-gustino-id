@@ -50,29 +50,12 @@ const Achievements = () => {
 
   return (
     <section className="space-y-4">
-      <FilterHeader
-        categoryOptions={categoriesData}
-        typeOptions={typesData}
-        totalData={data?.length}
-      />
-
-      {isLoading && (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {[...Array(6)].map((_, i) => (
-            <AchievementSkeleton key={i} />
-          ))}
-        </div>
-      )}
-
-      {error && <EmptyState message={t("error")} />}
-
-      {filteredAchievements?.length === 0 && (
-        <EmptyState message={t("no_data")} />
-      )}
-
-      {!isLoading && !error && filteredAchievements?.length !== 0 && (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {filteredAchievements?.map((item, index) => (
+      <EmptyState message={t("no_data")} />
+      <p className="text-center text-sm text-neutral-600 dark:text-neutral-400">
+        Achievements feature has been disabled. This feature requires server-side API integration.
+      </p>
+    </section>
+  );
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}
