@@ -1,60 +1,84 @@
 "use client";
 
-import useSWR from "swr";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { AchievementItem } from "@/common/types/achievements";
-import { fetcher } from "@/services/fetcher";
 
-import EmptyState from "@/common/components/elements/EmptyState";
 import AchievementCard from "./AchievementCard";
-import AchievementSkeleton from "./AchievementSkeleton";
-import FilterHeader from "./FilterHeader";
+
+const STATIC_ACHIEVEMENTS: AchievementItem[] = [
+  {
+    id: 2,
+    name: "Silver Award – MTE: AYIA 25th Malaysia Technology Expo™",
+    issuing_organization: "Malaysia Technology Expo (MTE) 2026",
+    type: "competition",
+    category: "healthcare",
+    issue_date: "2026-01-01",
+    image: "/images/achievements/certificates/MTE_26.jpg",
+    credential_id: "No.2026/MTE-AYIA/YOUTH/SILVER",
+    is_show: true,
+  },
+  {
+    id: 1,
+    name: "Silver Medal – Indonesia International Applied Science Project Olympiad 2025",
+    issuing_organization: "IYSA – Indonesian Young Scientist Association",
+    type: "competition",
+    category: "iot",
+    issue_date: "2025-12-21",
+    image: "/images/achievements/certificates/i2aspo_1.jpg",
+    credential_id: "No.2022/IYSA-FMIPA UGM/PASPO/AWARD/XII/2025",
+    is_show: true,
+  },
+];
 
 const Achievements = () => {
   const t = useTranslations("AchievementsPage");
-
   const params = useSearchParams();
 
   const type = params.get("type");
   const category = params.get("category");
   const search = params.get("search");
 
-  const { data: categoriesData } = useSWR(
-    "/api/achievements/categories",
-    fetcher,
-  );
-  const { data: typesData } = useSWR("/api/achievements/types", fetcher);
-
-  const queryParams = new URLSearchParams();
-  if (category) queryParams.append("category", category);
-  if (type) queryParams.append("type", type);
-  if (search) queryParams.append("search", search);
-
-  const apiUrl = `/api/achievements${queryParams.toString() ? `?${queryParams.toString()}` : ""}`;
-
-  const { data, isLoading, error } = useSWR(apiUrl, fetcher);
-
-  const filteredAchievements: AchievementItem[] = data
-    ?.filter((item: AchievementItem) => {
-      const matchesShow = item?.is_show;
-
-      const matchesCategory = !category || item?.category === category;
-
-      const matchesType = !type || item?.type === type;
-
-      return matchesShow && matchesType && matchesCategory;
-    })
-    .sort((a: AchievementItem, b: AchievementItem) => b.id - a.id);
+  const filteredAchievements = STATIC_ACHIEVEMENTS.filter((item) => {
+    const matchesType = !type || item.type === type;
+    const matchesCategory = !category || item.category === category;
+    const matchesSearch =
+      !search ||
+      item.name.toLowerCase().includes(search.toLowerCase()) ||
+      item.issuing_organization.toLowerCase().includes(search.toLowerCase());
+    return item.is_show && matchesType && matchesCategory && matchesSearch;
+  }).sort((a, b) => b.id - a.id);
 
   return (
-    <section className="space-y-4">
-      <EmptyState message={t("no_data")} />
-      <p className="text-center text-sm text-neutral-600 dark:text-neutral-400">
-        Achievements feature has been disabled. This feature requires
-        server-side API integration.
-      </p>
+    <section className="space-y-6">
+      {filteredAchievements.length === 0 ? (
+        <p className="text-center text-sm text-neutral-500 dark:text-neutral-400">
+          {t("no_data")}
+        </p>
+      ) : (
+        <motion.div
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.1 } },
+          }}
+        >
+          {filteredAchievements.map((item) => (
+            <motion.div
+              key={item.id}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              <AchievementCard {...item} />
+            </motion.div>
+          ))}
+        </motion.div>
+      )}
     </section>
   );
 };

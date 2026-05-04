@@ -8,7 +8,7 @@ export async function GET() {
     if (!apiKey) {
       return NextResponse.json(
         { error: "Wakatime API key not configured" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -22,23 +22,24 @@ export async function GET() {
           Authorization: `Basic ${base64Credentials}`,
         },
         cache: "no-store",
-      }
+      },
     );
 
     if (!response.ok) {
       return NextResponse.json(
         { error: "Failed to fetch Wakatime data" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     const data = await response.json();
-    return NextResponse.json(data);
+    // Unwrap the data object if it exists
+    return NextResponse.json(data.data || data);
   } catch (error) {
     console.error("Wakatime API Error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
