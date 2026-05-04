@@ -10,7 +10,7 @@ import AchievementCard from "./AchievementCard";
 const STATIC_ACHIEVEMENTS: AchievementItem[] = [
   // ── LOMBA (Nasional / Internasional) ──────────────────────────────────
   {
-    id: 6,
+    id: 33,
     name: "Sertifikat Apresiasi – Lomba Karya Tulis Ilmiah Nasional (LKTIN) 2026",
     issuing_organization: "IYSA – Indonesian Young Scientist Association",
     type: "lomba",
@@ -21,7 +21,7 @@ const STATIC_ACHIEVEMENTS: AchievementItem[] = [
     is_show: true,
   },
   {
-    id: 5,
+    id: 32,
     name: "Silver Award – MTE: AYIA 25th Malaysia Technology Expo™",
     issuing_organization: "Malaysia Technology Expo (MTE) 2026",
     type: "lomba",
@@ -32,7 +32,7 @@ const STATIC_ACHIEVEMENTS: AchievementItem[] = [
     is_show: true,
   },
   {
-    id: 4,
+    id: 31,
     name: "Silver Medal – Indonesia International Applied Science Project Olympiad 2025",
     issuing_organization: "IYSA – Indonesian Young Scientist Association",
     type: "lomba",
@@ -43,9 +43,99 @@ const STATIC_ACHIEVEMENTS: AchievementItem[] = [
     is_show: true,
   },
 
+  // ── PELATIHAN (Courses / Certifications) ─────────────────────────────
+  {
+    id: 28,
+    name: "Belajar Dasar Data Science",
+    issuing_organization: "Dicoding Indonesia",
+    type: "pelatihan",
+    category: "data",
+    issue_date: "2026-04-30",
+    image: "/images/achievements/certificates/dcd-1.png",
+    credential_id: "GRX5W3E2KZ0M",
+    is_show: true,
+  },
+  {
+    id: 27,
+    name: "Belajar Dasar Structured Query Language (SQL)",
+    issuing_organization: "Dicoding Indonesia",
+    type: "pelatihan",
+    category: "data",
+    issue_date: "2026-04-30",
+    image: "/images/achievements/certificates/dcd-2.png",
+    credential_id: "2VX30KEKJXYQ",
+    is_show: true,
+  },
+  {
+    id: 26,
+    name: "Belajar Dasar Pemrograman JavaScript",
+    issuing_organization: "Dicoding Indonesia",
+    type: "pelatihan",
+    category: "programming",
+    issue_date: "2026-02-08",
+    image: "/images/achievements/certificates/dcd-3.png",
+    credential_id: "ERZR2QRJ2PYV",
+    is_show: true,
+  },
+  {
+    id: 25,
+    name: "Introduction to FastAPI",
+    issuing_organization: "DataCamp",
+    type: "pelatihan",
+    category: "backend",
+    issue_date: "2025-10-25",
+    image: "/images/achievements/certificates/fast-api.png",
+    credential_id: "43953103",
+    is_show: true,
+  },
+  {
+    id: 24,
+    name: "Introduction to APIs in Python",
+    issuing_organization: "DataCamp",
+    type: "pelatihan",
+    category: "backend",
+    issue_date: "2025-10-24",
+    image: "/images/achievements/certificates/api-python.png",
+    credential_id: "43952073",
+    is_show: true,
+  },
+  {
+    id: 23,
+    name: "Intermediate Python for Developers",
+    issuing_organization: "DataCamp",
+    type: "pelatihan",
+    category: "programming",
+    issue_date: "2025-10-24",
+    image: "/images/achievements/certificates/imm-python.png",
+    credential_id: "43950297",
+    is_show: true,
+  },
+  {
+    id: 22,
+    name: "Networking Basics",
+    issuing_organization: "Cisco Networking Academy",
+    type: "pelatihan",
+    category: "networking",
+    issue_date: "2025-08-08",
+    image: "/images/achievements/certificates/cisco.png",
+    credential_id: "-",
+    is_show: true,
+  },
+  {
+    id: 21,
+    name: "Belajar Dasar Cloud dan Gen AI di AWS",
+    issuing_organization: "Dicoding Indonesia",
+    type: "pelatihan",
+    category: "cloud",
+    issue_date: "2025-05-12",
+    image: "/images/achievements/certificates/dcd-4.png",
+    credential_id: "MRZMNMGDKPYQ",
+    is_show: true,
+  },
+
   // ── KAMPUS (Tingkat Universitas / Fakultas) ───────────────────────────
   {
-    id: 3,
+    id: 15,
     name: "Sertifikat – Mentoring Al-Islam dan Kemuhammadiyahan",
     issuing_organization: "LPPIK – Universitas Muhammadiyah Surakarta",
     type: "kampus",
@@ -56,7 +146,7 @@ const STATIC_ACHIEVEMENTS: AchievementItem[] = [
     is_show: true,
   },
   {
-    id: 2,
+    id: 14,
     name: "Sertifikat – Master of Fakultaria (FAKUL-MOF) FKI 2024",
     issuing_organization: "Fakultas Komunikasi dan Informatika – UMS",
     type: "kampus",
@@ -67,7 +157,7 @@ const STATIC_ACHIEVEMENTS: AchievementItem[] = [
     is_show: true,
   },
   {
-    id: 1,
+    id: 13,
     name: "Sertifikat – Peserta Seminar Nasional & Workshop LinkedIn FEB UMS 2023",
     issuing_organization: "HEMa Manajemen – Fakultas Ekonomi dan Bisnis UMS",
     type: "kampus",
@@ -78,7 +168,7 @@ const STATIC_ACHIEVEMENTS: AchievementItem[] = [
     is_show: true,
   },
   {
-    id: 0,
+    id: 12,
     name: "Sertifikat – Peserta Expo UKM FKI 2023",
     issuing_organization: "BEM FKI – Universitas Muhammadiyah Surakarta",
     type: "kampus",
@@ -89,7 +179,7 @@ const STATIC_ACHIEVEMENTS: AchievementItem[] = [
     is_show: true,
   },
   {
-    id: -1,
+    id: 11,
     name: "Sertifikat – Peserta MASTA PMB 2023",
     issuing_organization: "Universitas Muhammadiyah Surakarta",
     type: "kampus",
@@ -101,11 +191,12 @@ const STATIC_ACHIEVEMENTS: AchievementItem[] = [
   },
 ];
 
-type FilterTab = "semua" | "lomba" | "kampus";
+type FilterTab = "semua" | "lomba" | "pelatihan" | "kampus";
 
 const TABS: { key: FilterTab; label: string }[] = [
   { key: "semua", label: "🏅 Semua" },
   { key: "lomba", label: "🏆 Lomba" },
+  { key: "pelatihan", label: "💻 Pelatihan" },
   { key: "kampus", label: "🎓 Kampus" },
 ];
 
@@ -122,7 +213,7 @@ const Achievements = () => {
   return (
     <section className="space-y-6">
       {/* Filter Tabs */}
-      <div className="flex gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-1.5 dark:border-neutral-700 dark:bg-neutral-800/60 w-fit">
+      <div className="flex flex-wrap gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-1.5 dark:border-neutral-700 dark:bg-neutral-800/60 w-fit">
         {TABS.map((tab) => (
           <button
             key={tab.key}
