@@ -213,12 +213,12 @@ const Achievements = () => {
   return (
     <section className="space-y-6">
       {/* Filter Tabs */}
-      <div className="flex flex-wrap gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-1.5 dark:border-neutral-700 dark:bg-neutral-800/60 w-fit">
+      <div className="flex w-full overflow-x-auto sm:w-fit gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-1.5 dark:border-neutral-700 dark:bg-neutral-800/60 scrollbar-hide [&::-webkit-scrollbar]:hidden">
         {TABS.map((tab) => (
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
-            className={`relative rounded-lg px-4 py-1.5 text-sm font-medium transition-colors duration-200 ${
+            className={`relative whitespace-nowrap rounded-lg px-4 py-1.5 text-sm font-medium transition-colors duration-200 ${
               activeTab === tab.key
                 ? "text-neutral-900 dark:text-white"
                 : "text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"

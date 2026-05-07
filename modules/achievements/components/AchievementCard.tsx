@@ -114,7 +114,7 @@ const AchievementCard = ({
 
               <motion.div
                 layoutId={`card-${image}`}
-                className="relative z-[10000] flex max-w-6xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-neutral-900"
+                className="relative z-[10000] flex max-h-[90vh] w-full max-w-6xl flex-col overflow-y-auto overflow-x-hidden rounded-2xl bg-white shadow-2xl dark:bg-neutral-900 md:max-h-[85vh] md:overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
@@ -124,20 +124,20 @@ const AchievementCard = ({
                   <CloseIcon size={20} />
                 </button>
 
-                <div className="flex flex-col md:flex-row">
-                  <div className="w-full bg-neutral-100 dark:bg-neutral-800">
-                    <motion.div layoutId={`image-${image}`}>
+                <div className="flex flex-col md:flex-row md:h-full">
+                  <div className="flex w-full items-center justify-center bg-neutral-100 dark:bg-neutral-800 md:flex-1">
+                    <motion.div layoutId={`image-${image}`} className="w-full">
                       <Image
                         src={image}
                         alt={name}
                         width={1000}
                         height={700}
-                        className="h-full max-h-[70vh] w-full object-contain md:max-h-[85vh]"
+                        className="max-h-[50vh] w-full object-contain md:max-h-[85vh] md:h-full"
                       />
                     </motion.div>
                   </div>
 
-                  <div className="w-90 hidden flex-col border-l border-neutral-200 py-4 pl-8 pr-20 dark:border-neutral-800 md:flex">
+                  <div className="flex w-full flex-col border-t border-neutral-200 p-6 dark:border-neutral-800 sm:p-8 md:w-96 md:border-l md:border-t-0 md:py-8 md:pl-8 md:pr-12 lg:w-[450px]">
                     <h2 className="text-lg font-bold text-neutral-900 dark:text-white">
                       {name}
                     </h2>
