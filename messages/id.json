@@ -3,7 +3,10 @@
     "intro": "Hai, saya Onic Agustino",
     "location": "Berdomisili di Surakarta, Indonesia 🇮🇩",
     "location_type": "Tatap Muka",
-    "resume": "Pengembang Fullstack yang berpengalaman dan penuh semangat, berspesialisasi dalam membangun solusi digital yang skalabel dan efisien. Di sisi frontend, saya menggunakan Next.js, TypeScript, dan Tailwind CSS untuk membuat antarmuka pengguna yang responsif dan mudah diakses. Di sisi backend, saya mengembangkan layanan yang tangguh menggunakan Golang, dan untuk mobile, saya membangun aplikasi Android native menggunakan Kotlin. Saya adalah engineer yang kolaboratif dan berorientasi pada detail, berkomitmen untuk menghadirkan aplikasi lintas platform yang terstruktur dengan baik dan berkinerja tinggi.",
+    "resume": {
+      "paragraf_1": "Ini adalah situs web pribadi saya, yang dibuat untuk menampilkan karya dan pengalaman saya sebagai Software Engineer. Saya fokus pada pembangunan solusi digital yang skalabel dan berdampak, termasuk platform web modern dan aplikasi mobile.",
+      "paragraf_2": "Fokus saya adalah merancang arsitektur perangkat lunak yang terstruktur dengan baik, mudah dipelihara, dan selaras dengan tujuan bisnis. Saya menggabungkan keahlian teknis dengan komunikasi proaktif dan kepemimpinan untuk memastikan setiap proyek memberikan kejelasan logis serta dampak dunia nyata yang berarti."
+    },
     "skills": {
       "title": "Keahlian",
       "sub_title": "Keahlian profesional saya."
