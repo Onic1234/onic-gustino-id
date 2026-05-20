@@ -8,16 +8,12 @@ import "./globals.css";
 
 import Layouts from "@/common/components/layouts";
 import ThemeProviderContext from "@/common/stores/theme";
-import { METADATA } from "@/common/constants/metadata";
+import { METADATA, DOMAIN } from "@/common/constants/metadata";
 import { inter } from "@/common/styles/fonts";
 import SkeletonThemeProvider from "@/SkeletonThemeProvider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : process.env.DOMAIN || "",
-  ),
+  metadataBase: new URL(DOMAIN),
   description: METADATA.description,
   keywords: METADATA.keyword,
   creator: METADATA.creator,

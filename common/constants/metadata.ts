@@ -1,13 +1,19 @@
+export const DOMAIN =
+  process.env.DOMAIN ||
+  (process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://onic-gustino-id.vercel.app");
+
 export const METADATA = {
   creator: "Onic Agustino",
   description: "Personal website, portfolio, blog",
   keyword: "onic, onic agustino",
   authors: {
     name: "Onic Agustino",
-    url: process.env.DOMAIN,
+    url: DOMAIN,
   },
   openGraph: {
-    url: process.env.DOMAIN,
+    url: DOMAIN,
     siteName: "Onic Agustino",
     locale: "id-ID",
   },

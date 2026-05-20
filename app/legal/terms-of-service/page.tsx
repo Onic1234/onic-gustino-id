@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
-import { METADATA } from "@/common/constants/metadata";
+import { METADATA, DOMAIN } from "@/common/constants/metadata";
 
 export const metadata: Metadata = {
   title: `Terms of Service ${METADATA.exTitle}`,
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Terms of Service for Onic Agustino's Portfolio App regarding TikTok API usage",
   keywords: "portfolio frontend developer, terms of service, tiktok api",
   alternates: {
-    canonical: `${process.env.DOMAIN}/terms-of-service`,
+    canonical: `${DOMAIN}/terms-of-service`,
   },
 };
 

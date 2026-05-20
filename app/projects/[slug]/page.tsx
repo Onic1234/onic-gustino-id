@@ -5,7 +5,7 @@ import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import ProjectDetail from "@/modules/projects/components/ProjectDetail";
 import { ProjectItem } from "@/common/types/projects";
-import { METADATA } from "@/common/constants/metadata";
+import { METADATA, DOMAIN } from "@/common/constants/metadata";
 import { loadMdxFiles } from "@/common/libs/mdx";
 import { getProjectsDataBySlug } from "@/services/projects";
 
@@ -31,7 +31,7 @@ export const generateMetadata = async ({
     },
     keywords: project.title,
     alternates: {
-      canonical: `${process.env.DOMAIN}/projects/${params.slug}`,
+      canonical: `${DOMAIN}/projects/${params.slug}`,
     },
   };
 };
